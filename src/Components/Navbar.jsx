@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom'
 
 const Navbar = () => {
     return (
-        <div style={{display:'flex', alignItems:'center', justifyContent:"space-between", padding:'20px', backgroundColor:'navy', position:'fixed', top:'0px', left:'0px', right:'0px'}}>
-            <div style={{backgroundColor:'tranparent'}}>
+        <div style={{display:'flex', alignItems:'center', justifyContent:"space-between", padding:'20px', backgroundColor:'GrayText', position:'fixed', top:'0px', left:'0px', right:'0px'}}>
+            <div style={{backgroundColor:'transparent'}}>
                 {new Date().toUTCString().slice(0, 16)}
             </div>
-            <div>
-                <Link to='/' >Home</Link>
-                <Link to='/about' >About</Link>
-                <Link to='/slide' >Slide</Link>
+            <div style={{backgroundColor:'transparent', display:'flex', alignItems:'center', justifyContent:'space-around', gap:'40px', listStyle:'none',}}>
+                <Link style={{backgroundColor:'transparent',  textDecoration:'none'}} to='/' >Home</Link>
+                <Link style={{backgroundColor:'transparent',  textDecoration:'none'}} to='/about' >About</Link>
+                <Link style={{backgroundColor:'transparent',  textDecoration:'none'}} to='/slide' >Slide</Link>
             </div>
+            <input style={{backgroundColor:'white', color:'black', padding:'6px', border:'none', borderRadius:'2px', outline:'none'}} type="search" name="" placeholder='search here' id="" />
         </div>
     )
 }
