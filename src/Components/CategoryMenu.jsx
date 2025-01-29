@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import FoodData from '../assets/Data/FoodData.js'
+import { useDispatch } from 'react-redux'
+import { addCategory } from '../Store/CategorySlice.jsx'
 
 const CategoryMenu = () => {
     const [categories, setCategories] = useState([])
@@ -10,14 +12,18 @@ const CategoryMenu = () => {
     useEffect(() => {
         ListUniqueCategory()
     }, [])
+
+    const dispatch = useDispatch()
+
     return (
         <div>
             <h1>Order Your Favorite Food</h1>
             <div style={{display:'flex', alignItems:'center', gap:'6px', overflowX:'scroll'}}>
+            <button onClick={()=>dispatch(addCategory("All"))} style={{ fontSize: '22px', cursor: 'pointer', borderRadius: '4px' }}>All</button>
                 {
                     categories.map((category, i) => {
                         return (
-                            <button key={i} style={{ fontSize: '22px', cursor: 'pointer', borderRadius: '4px' }}>{category}</button>
+                            <button onClick={()=>dispatch(addCategory(category))} key={i} style={{ fontSize: '22px', cursor: 'pointer', borderRadius: '4px' }}>{category}</button>
                         )
                     })
                 }

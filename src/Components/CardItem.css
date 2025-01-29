@@ -1,0 +1,25 @@
+.img-bg {
+    background-color: rgb(78, 82, 79);
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;;
+}
+
+.image {
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background-color: transparent;
+}
+.lead{
+    line-height: 0%;
+}
+.add-min{
+    display: flex;
+    align-items: center; 
+    gap: 2.5rem;
+    position: absolute;
+    right: 2.5rem;
+}
