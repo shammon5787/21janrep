@@ -1,7 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { addSearch } from '../Store/SeachSlice'
 
 const Navbar = () => {
+    const dispatch = useDispatch()
     return (
         <div style={{display:'flex', alignItems:'center', justifyContent:"space-between", padding:'20px', backgroundColor:'GrayText', position:'fixed', top:'0px', left:'0px', right:'0px'}}>
             <div style={{backgroundColor:'transparent'}}>
@@ -12,7 +15,7 @@ const Navbar = () => {
                 <Link style={{backgroundColor:'transparent',  textDecoration:'none'}} to='/about' >About</Link>
                 <Link style={{backgroundColor:'transparent',  textDecoration:'none'}} to='/slide' >Slide</Link>
             </div>
-            <input style={{backgroundColor:'white', color:'black', padding:'6px', border:'none', borderRadius:'2px', outline:'none'}} type="search" name="" placeholder='search here' id="" />
+            <input onChange={(e)=>dispatch(addSearch(e.target.value))} style={{backgroundColor:'white', color:'black', padding:'6px', border:'none', borderRadius:'2px', outline:'none'}} type="search" name="" placeholder='search here' id="" />
         </div>
     )
 }

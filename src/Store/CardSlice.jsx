@@ -21,7 +21,7 @@ const CardSlice = createSlice({
             state.cart = state.cart.map((item)=>item.id === action.payload.id ? {... item, qty : item.qty + 1}: item)
         },
         decreamentItem:(state, action)=>{
-            state.cart = state.cart.map((item)=>item.id === action.payload.id ? {... item, qty : item.qty - 1} : item)
+            state.cart = state.cart.map((item)=>item.id === action.payload.id ? {... item, qty : item.qty -  1} : item)
         }
     }
 })
